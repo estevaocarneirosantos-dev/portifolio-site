@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maria Eduarda — 15 Anos | Modelo de Convite</title>
+<meta name="description" content="Modelo demonstrativo de convite de 15 anos com tema personalizado, galeria e confirmação por família." />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#fdf4f8;color:#3a2b33;line-height:1.7}
+.top{text-align:center;padding:14px;background:#3a2b33;color:#f9dcec;font-size:.82rem}
+.top a{color:#f9dcec}
+.hero{text-align:center;padding:60px 24px 30px;max-width:680px;margin:0 auto}
+.badge{display:inline-block;border:1px solid #e8b4cd;padding:6px 14px;border-radius:100px;font-size:.78rem;letter-spacing:1.5px;text-transform:uppercase;color:#9c4f74;margin-bottom:16px}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(2.4rem,6vw,3.6rem);font-weight:500}
+.hero p{color:#7a5f6d;max-width:520px;margin:14px auto}
+.card{max-width:680px;margin:0 auto 16px;background:#fff;border:1px solid #f3d3e2;border-radius:18px;padding:26px 22px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#c2437f;color:#fff;text-decoration:none;padding:13px 22px;border-radius:12px;font-weight:600;margin-top:12px;border:none;cursor:pointer}
+.btn.out{background:transparent;color:#c2437f;border:1px solid #c2437f}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.gallery div{aspect-ratio:1;border-radius:12px;background:linear-gradient(135deg,#f9dcec,#f3b8d4);display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+label{display:block;font-size:.85rem;margin-top:12px;color:#7a5f6d}
+input,select,textarea{width:100%;margin-top:6px;padding:11px;border-radius:8px;border:1px solid #ecc9da;font-size:.95rem}
+#mural li{list-style:none;background:#fdf4f8;border:1px solid #f3d3e2;padding:10px 12px;border-radius:10px;margin-top:8px;font-size:.9rem}
+footer{text-align:center;padding:28px;color:#9a7e8d;font-size:.82rem}
+</style>
+</head>
+<body>
+<div class="top">Modelo demonstrativo por Estevão Carneiro Santos • <a href="/">voltar ao site</a></div>
+<section class="hero">
+<div class="badge">Save the date • 20 de Setembro</div>
+<h1>Maria Eduarda</h1>
+<p>15 anos de alegria! Convido você e sua família para celebrar comigo essa noite especial em Goiânia.</p>
+<a class="btn" href="#rsvp"><i class="fa-solid fa-cake-candles"></i> Confirmar presença</a>
+</section>
+
+<div class="card">
+<h2>🎀 A festa</h2>
+<p><strong>20h — Recepção e valsa</strong><br>Salão Crystal, Goiânia - GO<br>Traje: esporte fino • Tema: jardim rosé</p>
+<div style="margin-top:10px">
+<a class="btn out" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Goiania+GO">Ver mapa</a>
+</div>
+<div class="gallery"><div>🌸</div><div>💃</div><div>🎂</div></div>
+</div>
+
+<div class="card" id="presentes">
+<h2>🎁 Lista de presentes</h2>
+<p style="font-size:.9rem;color:#7a5f6d">Mimo via Pix ou item da lista. Toque para avisar no WhatsApp.</p>
+<div style="background:#3a2b33;color:#f9dcec;border-radius:12px;padding:14px;margin-top:12px;font-size:.9rem">Pix: <code id="pix15">15anos.mariaeduarda@email.com</code> <button class="btn" style="padding:8px 14px;margin-top:8px" onclick="copiarPix15()">Copiar Pix</button></div>
+<div class="gallery" style="margin-top:12px">
+<div style="flex-direction:column;font-size:.9rem;padding:10px;background:#fff;border:1px solid #f3d3e2"><strong>💄 Kit make</strong><span>R$ 199</span><button class="btn" style="padding:8px;margin-top:6px" onclick="presentear15(this,'Kit make','R$ 199')">Presentear</button></div>
+<div style="flex-direction:column;font-size:.9rem;padding:10px;background:#fff;border:1px solid #f3d3e2"><strong>👗 Vestido festa</strong><span>R$ 349</span><button class="btn" style="padding:8px;margin-top:6px" onclick="presentear15(this,'Vestido festa','R$ 349')">Presentear</button></div>
+<div style="flex-direction:column;font-size:.9rem;padding:10px;background:#fff;border:1px solid #f3d3e2"><strong>📱 Acessórios</strong><span>R$ 149</span><button class="btn" style="padding:8px;margin-top:6px" onclick="presentear15(this,'Acessórios','R$ 149')">Presentear</button></div>
+</div>
+</div>
+
+<div class="card" id="rsvp">
+<h2>Confirmação por família</h2>
+<label>Nome da família<input id="fName" placeholder="Ex: Família Oliveira"></label>
+<label>Acompanhantes<select id="fQtd"><option>1 pessoa</option><option selected>2 pessoas</option><option>3 pessoas</option><option>4+ pessoas</option></select></label>
+<button class="btn" onclick="enviar()"><i class="fa-brands fa-whatsapp"></i> Enviar via WhatsApp</button>
+</div>
+
+<div class="card">
+<h2>💌 Mural de recados</h2>
+<label>Deixe um recado para a debutante<input id="rName" placeholder="Seu nome"></label>
+<label><textarea id="rMsg" rows="2" placeholder="Ex: Que noite linda!"></textarea></label>
+<button class="btn out" onclick="postar()">Publicar recado</button>
+<ul id="mural"></ul>
+</div>
+
+<footer>Modelo fictício para demonstração • Maria Eduarda é personagem ilustrativa<br>Feito por Estevão Carneiro Santos</footer>
+<script>
+function enviar(){
+  const n=document.getElementById('fName').value.trim()||'Família convidada';
+  const q=document.getElementById('fQtd').value;
+  window.open('https://wa.me/5562981273701?text='+encodeURIComponent(`CONFIRMAÇÃO 15 ANOS - Olá! Sou ${n}. Confirmo ${q}. (Modelo demo)`),'_blank');
+}
+function presentear15(btn,item,valor){
+  window.open('https://wa.me/5562981273701?text='+encodeURIComponent(`PRESENTE 15 ANOS - Olá! Quero presentear com: ${item} (${valor}). (Modelo demo)`),'_blank');
+  btn.textContent='Reservado ✓';
+}
+function copiarPix15(){
+  const t=document.getElementById('pix15').textContent;
+  if(navigator.clipboard) navigator.clipboard.writeText(t);
+  alert('Pix copiado: '+t);
+}
+const chave='mural15demo';
+function carregar(){try{return JSON.parse(localStorage.getItem(chave))||[]}catch(e){return[]}}
+function salvar(l){localStorage.setItem(chave,JSON.stringify(l))}
+function render(){document.getElementById('mural').innerHTML=carregar().map(x=>`<li><strong>${x.n}:</strong> ${x.m}</li>`).join('')}
+function postar(){
+  const n=document.getElementById('rName').value.trim()||'Anônimo';
+  const m=document.getElementById('rMsg').value.trim(); if(!m) return;
+  const l=carregar(); l.unshift({n,m}); salvar(l.slice(0,20)); render();
+  document.getElementById('rMsg').value='';
+}
+render();
+</script>
+</body>
+</html>
